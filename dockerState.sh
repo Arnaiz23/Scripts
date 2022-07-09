@@ -2,7 +2,7 @@
 
 PS3="Seleccionar una opcion: "
 
-select option in Prod Dev Down Exit
+select option in Prod Dev DownP DownD Exit
 do
 	case $option in
 		Prod)
@@ -25,7 +25,7 @@ do
 			echo "Exito!!!"
 			break
 			;;
-		Down)
+		DownP)
 			echo "Eliminando los contenedores"
 			docker compose down
 			echo "|-------------------------------------------------------------------------|"
@@ -33,6 +33,15 @@ do
 			echo "|--------------------------------------------------------------------------|"
 			break
 			;;
+		DownD)
+			echo "Eliminando los contenedores"
+			docker compose -f docker-compose-dev.yml down
+			echo "|-------------------------------------------------------------------------|"
+			echo "|  ¡¡¡¡¡¡Recuerde eliminar la imagen si quieres cambiar de entorno!!!!!!  |"
+			echo "|--------------------------------------------------------------------------|"
+			break
+			;;
+
 		Exit)
 			echo "Saliendo..."
 			break
