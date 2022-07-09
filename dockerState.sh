@@ -7,13 +7,21 @@ do
 	case $option in
 		Prod)
 			echo "Arrancando docker en Produccion"
-			docker compose up
+			docker compose up -d
+			echo "------------------------------"
+			echo "    Contenedores actuales"
+			echo "------------------------------"
+			docker ps -a
 			echo "Exito!!!"
 			break
 			;;
 		Dev)
 			echo "Arrancando docker en Development"
-			docker compose -f docker-compose-dev.yml up
+			docker compose -f docker-compose-dev.yml up -d
+                        echo "------------------------------"
+			echo "    Contenedores actuales"
+			echo "------------------------------"
+		        docker ps -a
 			echo "Exito!!!"
 			break
 			;;
