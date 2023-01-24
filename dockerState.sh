@@ -8,6 +8,7 @@ do
 		Prod)
 			echo "Arrancando docker en Produccion"
 			docker compose up -d
+			clear
 			echo "------------------------------"
 			echo "    Contenedores actuales"
 			echo "------------------------------"
@@ -18,6 +19,7 @@ do
 		Dev)
 			echo "Arrancando docker en Development"
 			docker compose -f docker-compose-dev.yml up -d
+			#clear
                         echo "------------------------------"
 			echo "    Contenedores actuales"
 			echo "------------------------------"
@@ -28,6 +30,7 @@ do
 		DownP)
 			echo "Eliminando los contenedores"
 			docker compose down
+			clear
 			echo "|-------------------------------------------------------------------------|"
 			echo "|  ¡¡¡¡¡¡Recuerde eliminar la imagen si quieres cambiar de entorno!!!!!!  |"
 			echo "|--------------------------------------------------------------------------|"
@@ -36,6 +39,7 @@ do
 		DownD)
 			echo "Eliminando los contenedores"
 			docker compose -f docker-compose-dev.yml down
+			clear
 			echo "|-------------------------------------------------------------------------|"
 			echo "|  ¡¡¡¡¡¡Recuerde eliminar la imagen si quieres cambiar de entorno!!!!!!  |"
 			echo "|--------------------------------------------------------------------------|"
